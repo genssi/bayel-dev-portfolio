@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Fullstack Portfolio with AI-Driven Contact Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное веб-портфолио разработчика с интегрированной формой обратной связи, бэкенд-валидацией, автоматическим AI-анализом входящих заявок и SMTP-уведомлениями.
 
-Currently, two official plugins are available:
+* **GitHub Репозиторий:** [https://github.com/genssi/bayel-dev-portfolio.git]
+* **Живое демо (Деплой):** [https://bayel-dev-portfolio.vercel.app/]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Стек технологий
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React, TypeScript, Vite, SCSS Modules, Lucide React (иконки).
+* **Backend:** Node.js, TypeScript, Vercel Serverless Functions.
+* **AI Integration:** Gemini API (`@google/genai` SDK, модель `gemini-2.5-flash`).
+* **Email Service:** SMTP / Nodemailer.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Как реализована форма и AI-инструменты
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Клиентская часть:** Форма собирает данные (`Имя`, `Телефон`, `Email`, `Комментарий`). На фронтенде реализована строгая валидация полей (проверка заполнения, валидация почты и телефона через регулярные выражения).
+2.  **Серверная часть:** Данные отправляются на Serverless-эндпоинт Node.js (`/api/send-email`), где проходят повторную валидацию для безопасности.
+3.  **ИИ-аналитика:** Текст комментария пользователя отправляется в нейросеть **Gemini** с четким системным промптом. ИИ выполняет две задачи:
+    * Генерирует краткую выжимку (Summary) сути обращения, чтобы сэкономить время при чтении.
+    * Определяет приоритет заявки (Низкий, Средний, Высокий) на основе триггерных слов (например, "срочно", "бюджет", "оффер").
+4.  **Уведомление:** Оригинальные данные формы вместе с аналитическим вердиктом от ИИ форматируются в HTML-письмо и мгновенно отправляются автору портфолио на почту через Nodemailer.
+5. **Роль AI в разработке проекта (Совместная работа)** Этот проект — результат эффективной синергии между разработчиком и AI-ассистентом (Gemini), что позволило пройти полный цикл от проектирования архитектуры до успешного деплоя в кратчайшие сроки.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Как запустить проект локально
+
+### 1. Клонирование и установка зависимостей
+```bash
+git clone [https://github.com/genssi/bayel-dev-portfolio.git]
+cd bayel-dev-portfolio
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Настройка окружения (Переменные среды)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Создайте файл .env в корне проекта и добавьте следующие ключи:
+AI_API_KEY=ваш_ключ_gemini_api
+SMTP_HOST=smtp.gmail.com
+NOTIFICATION_EMAIL=ваша_почта@gmail.com
+EMAIL_APP_PASSWORD=ваш_пароль_приложения_google
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Запуск в режиме разработки
+
+Так как проект использует Serverless-функции для бэкенда, для одновременного запуска фронтенда и сервера папки /api используйте Vercel CLI:
+```bash
+npm install -g vercel
+vercel dev
 ```
+Проект запустится на http://localhost:3000.
