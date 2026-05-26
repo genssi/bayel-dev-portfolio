@@ -40,10 +40,12 @@ npm install
 ### 2. Настройка окружения (Переменные среды)
 
 Создайте файл .env в корне проекта и добавьте следующие ключи:
+```bash
 AI_API_KEY=ваш_ключ_gemini_api
 SMTP_HOST=smtp.gmail.com
 NOTIFICATION_EMAIL=ваша_почта@gmail.com
 EMAIL_APP_PASSWORD=ваш_пароль_приложения_google
+```
 
 ### 3. Запуск в режиме разработки
 
