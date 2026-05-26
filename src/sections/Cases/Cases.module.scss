@@ -1,0 +1,179 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.cases {
+  padding: 6rem 2rem;
+  
+  @include mobile {
+    padding: 4rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: $accent;
+    border-radius: 2px;
+  }
+}
+
+.experienceTimeline {
+  margin-bottom: 5rem;
+}
+
+.expCard {
+  background-color: $bg-secondary;
+  padding: 2.5rem;
+  border-radius: $radius;
+  border: 1px solid rgba($text-secondary, 0.1);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  
+  @include mobile {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.expCompany {
+  font-size: 1.5rem;
+  color: $accent;
+  font-weight: 700;
+}
+
+.expRole {
+  font-size: 1.1rem;
+  color: rgba($text-primary, 0.9);
+  margin-top: 0.25rem;
+}
+
+.expPeriod {
+  font-size: 0.9rem;
+  color: $text-secondary;
+  background-color: rgba($text-secondary, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+}
+
+.expDescription {
+  color: rgba($text-primary, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.achievementsList {
+  padding-left: 1.25rem;
+  
+  li {
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    
+    &::marker {
+      color: $accent;
+    }
+  }
+}
+
+.subTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectCard {
+  background-color: $bg-secondary;
+  border: 1px solid rgba($text-secondary, 0.05);
+  border-radius: $radius;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: $transition;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent, 0.2);
+    box-shadow: 0 10px 30px -15px rgba($bg-primary, 0.5);
+  }
+}
+
+.projectTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: $text-primary;
+}
+
+.projectDescription {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.projectStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.techBadge {
+  background-color: rgba($accent, 0.05);
+  color: rgba($accent, 0.9);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba($accent, 0.1);
+}
+
+.projectActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.linkWrapper {
+  flex: 1;
+}
+
+.actionBtn {
+  min-height: 42px !important;
+  font-size: 0.95rem !important;
+}
+
+.btnIcon {
+  margin-right: 0.5rem;
+}
