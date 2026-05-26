@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+  
+  @include mobile {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba($accent, 0.1);
+  color: $accent;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba($accent, 0.2);
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, $text-primary, rgba($text-primary, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include tablet {
+    font-size: 2.5rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  color: $accent;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  font-size: 1.25rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+
+  @include tablet {
+    font-size: 1.1rem;
+  }
+}
+
+.actions {
+  max-width: 240px;
+}

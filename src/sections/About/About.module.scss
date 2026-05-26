@@ -1,0 +1,123 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about {
+  padding: 6rem 2rem;
+  background-color: rgba($bg-secondary, 0.3);
+  
+  @include mobile {
+    padding: 4rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: $accent;
+    border-radius: 2px;
+  }
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principleCard {
+  background-color: $bg-secondary;
+  padding: 2rem;
+  border-radius: $radius;
+  border: 1px solid rgba($text-secondary, 0.1);
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent, 0.3);
+  }
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: $accent;
+}
+
+.cardText {
+  color: $text-secondary;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.skillsContainer {
+  background-color: rgba($bg-secondary, 0.5);
+  padding: 2.5rem;
+  border-radius: $radius;
+  border: 1px solid rgba($text-secondary, 0.05);
+}
+
+.skillsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.skillCategory {
+  h4 {
+    font-size: 1.1rem;
+    color: rgba($text-primary, 0.9);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  span {
+    background-color: $bg-primary;
+    color: $text-primary;
+    padding: 0.5rem 0.875rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    border: 1px solid rgba($text-secondary, 0.1);
+    font-weight: 500;
+  }
+  
+  .toolTag {
+    border-color: rgba($accent, 0.1);
+    color: $text-secondary;
+  }
+}
