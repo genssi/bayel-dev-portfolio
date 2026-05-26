@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.contactSection {
+  padding: 6rem 2rem;
+  background-color: rgba($bg-secondary, 0.2);
+  
+  @include mobile {
+    padding: 4rem 1rem;
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  color: $text-secondary;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.formWrapper {
+  background-color: $bg-secondary;
+  border: 1px solid rgba($text-secondary, 0.1);
+  border-radius: $radius;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px -15px rgba($bg-primary, 0.7);
+  
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+}
+
+.successBlock, .errorBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0;
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p {
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+.successIcon {
+  color: $success;
+}
+
+.errorIcon {
+  color: $error;
+}
