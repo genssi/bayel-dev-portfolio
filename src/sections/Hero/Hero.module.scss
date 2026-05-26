@@ -24,13 +24,13 @@
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: rgba($accent, 0.1);
-  color: $accent;
-  border-radius: 50px;
+  background-color: rgba($success, 0.1);
+  color: $success;
+  border-radius: 100px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba($accent, 0.2);
+  border: 1px solid rgba($success, 0.2);
 }
 
 .name {

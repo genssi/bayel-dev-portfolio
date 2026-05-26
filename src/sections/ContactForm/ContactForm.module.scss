@@ -3,7 +3,7 @@
 
 .contactSection {
   padding: 6rem 2rem;
-  background-color: rgba($bg-secondary, 0.2);
+  background-color: $bg-secondary-main;
   
   @include mobile {
     padding: 4rem 1rem;

@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     return (
         <section className={styles.hero}>
             <div className={styles.container}>
-                <span className={styles.badge}>Доступ для проектов</span>
+                <span className={styles.badge}>Открыт к предложениям</span>
                 <h1 className={styles.name}>{HERO_DATA.name}</h1>
                 <h2 className={styles.title}>{HERO_DATA.title}</h2>
                 <p className={styles.description}>{HERO_DATA.description}</p>
