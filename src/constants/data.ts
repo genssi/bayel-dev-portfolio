@@ -95,7 +95,7 @@ export const PROJECTS = [
             "VPS",
         ],
         github: "https://github.com/genssi/Soul-House",
-        deploy: "https://www.mybaskets.store/"
+        deploy: ""
     },
 ];
 
