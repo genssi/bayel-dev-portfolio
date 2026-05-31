@@ -12,9 +12,10 @@ export const SKILLS = {
         "React",
         "TypeScript",
         "JavaScript (ES6+)",
+        "Zustand",
         "HTML5",
         "CSS3 / SCSS",
-        "Styled Components",
+        "Tailwind CSS",
         "React Router",
     ],
     backend: ["Node.js", "REST API", "Telegram Bot API"],
@@ -61,6 +62,21 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
     {
+        title: "CoreCRM",
+        description:
+            "Интерактивная b2b-система управления задачами и спринтами с drag-and-drop сессиями. Реализован глубокий архитектурный рефакторинг, живой подсчет KPI метрик, полная мобильная адаптивность через систему табов и b2b-панель с интерактивной спецификацией REST API.",
+        stack: [
+            "React",
+            "TypeScript",
+            "Zustand",
+            "@hello-pangea/dnd",
+            "Tailwind CSS",
+            "Vercel",
+        ],
+        github: "https://github.com/genssi/crm-dashboard.git",
+        deploy: "https://crm-dashboard-mu-nine.vercel.app/",
+    },
+    {
         title: "Movie Genss",
         description:
             "Полноценное SPA-приложение для поиска фильмов с использованием TMDB API. Реализованы детальные страницы, интеграция YouTube Player API для трейлеров, плавный Skeleton Loading и CI/CD через Vercel с защитой API-ключей.",
@@ -72,7 +88,7 @@ export const PROJECTS = [
             "Vercel",
         ],
         github: "https://github.com/genssi/movie-genss",
-        deploy: "https://movie-genss.vercel.app/"
+        deploy: "https://movie-genss.vercel.app/",
     },
     {
         title: "GitHub Explorer",
@@ -80,7 +96,7 @@ export const PROJECTS = [
             "Сервис поиска пользователей GitHub с применением debounce-фильтрации. Карточки профилей отображают подробную статистику, а списки репозиториев поддерживают сортировку по звёздам, дате и имени. Реализована обработка 404 ошибок.",
         stack: ["React", "TypeScript", "Vite", "Кастомные хуки"],
         github: "https://github.com/genssi/GitHub-Explorer",
-        deploy: "https://git-hub-explorer-beta.vercel.app/"
+        deploy: "https://git-hub-explorer-beta.vercel.app/",
     },
     {
         title: "MyBaskets.online",
@@ -95,7 +111,7 @@ export const PROJECTS = [
             "VPS",
         ],
         github: "https://github.com/genssi/Soul-House",
-        deploy: ""
+        deploy: "",
     },
     {
         title: "Другие проекты",
@@ -110,7 +126,7 @@ export const PROJECTS = [
             "VPS",
         ],
         github: "https://github.com/genssi/Soul-House",
-        deploy: ""
+        deploy: "",
     },
 ];
 
