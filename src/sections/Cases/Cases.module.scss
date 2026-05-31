@@ -271,3 +271,45 @@
 .btnIcon {
     margin-right: 0.5rem;
 }
+
+.moreProjectsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    
+    @include mobile {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+}
+
+.moreProjectsBtn {
+  min-height: 48px !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba($accent, 0.4) !important;
+  transition: $transition !important;
+
+  &:hover {
+    background-color: rgba($accent, 0.05) !important;
+    border-color: $accent !important;
+    transform: translateY(-2px);
+  }
+
+  @include mobile {
+    width: 100%;
+    font-size: 0.85rem !important;
+    padding: 0.75rem 1.25rem !important;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}

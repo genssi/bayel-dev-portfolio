@@ -101,6 +101,23 @@ const Cases: React.FC = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Центральная кнопка для перехода ко всем остальным проектам на GitHub */}
+                <div className={styles.moreProjectsWrapper}>
+                    <a
+                        href="https://github.com/genssi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button
+                            variant="secondary"
+                            className={styles.moreProjectsBtn}
+                        >
+                            <FolderGit2 size={20} className={styles.btnIcon} />
+                            Смотреть другие проекты на GitHub
+                        </Button>
+                    </a>
+                </div>
             </div>
         </section>
     );

@@ -113,14 +113,6 @@ export const PROJECTS = [
         github: "https://github.com/genssi/Soul-House",
         deploy: "",
     },
-    {
-        title: "Другие проекты",
-        description:
-            "В моем профиле на GitHub вы найдете и другие работы: учебные репозитории, и тд. Коллекция учебных и пет-проектов на GitHub. Эксперименты с React, TypeScript, CSS-анимациями и API. ",
-        stack: [],
-        github: "https://github.com/genssi",
-        deploy: "",
-    },
 ];
 
 export const CONTACTS = {
